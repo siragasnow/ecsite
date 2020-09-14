@@ -1,24 +1,25 @@
-# README
+# <アプリ名>
+練習用ECサイト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+DWCで学んだことを活かした通販ECサイト
 
-Things you may want to cover:
+### サイトテーマ
+通販サイト
 
-* Ruby version
+### テーマを選んだ理由
+練習用
 
-* System dependencies
+### ターゲットユーザ
+全体
 
-* Configuration
+### 主な利用シーン
+自宅等での買い物
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 設計書
+・会員登録機能
+・管理者機能
+・カート機能
+・ジャンル機能
+・検索機能
+・・・等を実装予定
