@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
+    get 'top' => 'homes#top', as: 'top'
     get 'orders/index'
     get 'orders/show'
     get 'items/index'
@@ -22,7 +23,8 @@ Rails.application.routes.draw do
     registrations: 'customer/registrations',
   }
 
-  namespace :customer do
+  scope module: :customer do
+    root 'homes#top'
     get 'deliveries/index'
     get 'deliveries/edit'
     get 'orders/index'
