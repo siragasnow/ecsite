@@ -10,6 +10,79 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="navbar">
+      <div class="container">
+        <nav>
+          <ul class="nav">
+            <%= link_to 'HOGEGE', root_path %>
+          </ul>
+        </nav>
+        <nav>
+          <ul class="nav justify-content-end">
+              <!-- 顧客ログイン時 -->
+            <% if customer_signed_in? %>
+              <li id="nav-message">　ようこそ、さん！　</li>
+              <li><%= link_to ' マイページ', "#" %></li>
+              <li><%= link_to ' 商品一覧', "#" %></li>
+              <li><%= link_to ' カート', "#" %></li>
+              <li><%= link_to ' ログアウト', "#" %></li>
+            <!-- 管理者ログイン時 -->
+            <% elsif admin_signed_in? %>
+              <li id="nav-message">　お帰りなさい、管理者様　</li>
+              <li><%= link_to ' 商品一覧', "#" %></li>
+              <li><%= link_to ' 会員一覧', "#" %></li>
+              <li><%= link_to ' 注文履歴一覧', "#" %></li>
+              <li><%= link_to ' ジャンル一覧', "#" %></li>
+              <li><%= link_to ' ログアウト', "#" %></li>
+              <!-- ログアウト時またはログインしていない時 -->
+            <% else %>
+              <li><%= link_to ' ABOUT', homes_about_path %></li>
+              <li><%= link_to ' HELP', "#" %></li>
+              <li><%= link_to ' REGISTRATION', new_customer_registration_path %></li>
+              <li><%= link_to ' LOGIN', new_customer_session_path %></li>
+              <li><%= link_to ' 管理者の方はこちら', "#" %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <nav>
+              <ul>
+                <li>ニュース</li>
+                <li>ショッピングガイド</li>
+                <li>ご利用規則</li>
+                <li>プライバシーポリシー</li>
+                <li>採用情報</li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-md-2">
+            <nav>
+              <h4>BLANDS</h4>
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-md-6">
+          </div>
+          <div class="col-md-2">
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
