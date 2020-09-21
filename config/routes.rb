@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admins, controller: {
+  devise_for :admin, controllers: {
     sessiions: 'admin/sessions',
   }
 
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     get 'customers/edit'
   end
 
-  devise_for :customers, controller: {
+  devise_for :customer, controllers: {
     sessions: 'customer/sessions',
     registrations: 'customer/registrations',
   }

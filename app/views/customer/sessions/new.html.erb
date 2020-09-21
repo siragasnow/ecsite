@@ -1,4 +1,4 @@
-<h2>Log in</h2>
+<h2>ログイン画面</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -22,5 +22,8 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
+
+<h2>新規登録の方</h2>
+<p><%= link_to "こちら", new_customer_registration_path %>から新規登録してください</p>
 
 <%= render "customer/shared/links" %>
