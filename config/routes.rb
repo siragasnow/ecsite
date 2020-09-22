@@ -1,16 +1,13 @@
 Rails.application.routes.draw do
   devise_for :admin, controllers: {
-    sessiions: 'admin/sessions',
+    sessions: 'admin/sessions',
   }
 
   namespace :admin do
     get 'top' => 'homes#top', as: 'top'
+    resources :items, except: [:destroy]
     get 'orders/index'
     get 'orders/show'
-    get 'items/index'
-    get 'items/show'
-    get 'items/new'
-    get 'items/edit'
     get 'genres/index'
     get 'genres/edit'
     get 'customers/index'

@@ -29,11 +29,11 @@
             <!-- 管理者ログイン時 -->
             <% elsif admin_signed_in? %>
               <li id="nav-message">　お帰りなさい、管理者様　</li>
-              <li><%= link_to ' 商品一覧', "#" %></li>
+              <li><%= link_to ' 商品一覧', admin_items_path %></li>
               <li><%= link_to ' 会員一覧', "#" %></li>
               <li><%= link_to ' 注文履歴一覧', "#" %></li>
               <li><%= link_to ' ジャンル一覧', "#" %></li>
-              <li><%= link_to ' ログアウト', "#" %></li>
+              <li><%= link_to ' ログアウト', destroy_admin_session_path, method: :delete %></li>
               <!-- ログアウト時またはログインしていない時 -->
             <% else %>
               <li><%= link_to ' ABOUT', homes_about_path %></li>
