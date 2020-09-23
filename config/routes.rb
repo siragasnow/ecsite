@@ -8,8 +8,7 @@ Rails.application.routes.draw do
     resources :items, except: [:destroy]
     get 'orders/index'
     get 'orders/show'
-    get 'genres/index'
-    get 'genres/edit'
+    resources :genres, only: [:index, :create, :edit, :update, :destroy]
     get 'customers/index'
     get 'customers/show'
     get 'customers/edit'
