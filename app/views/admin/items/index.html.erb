@@ -2,3 +2,25 @@
 
 <p>商品を<%= link_to "追加する", new_admin_item_path %></p>
 
+<table class="table">
+	<thead>
+		<tr>
+			<th>商品ID</th>
+			<th>商品名</th>
+			<th>税抜価格</th>
+			<th>ジャンル</th>
+			<th>販売ステータス</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @items.each do |item| %>
+		<tr>
+			<td><%= item.id %></td>
+			<td><%= link_to item.name, admin_item_path(item) %></td>
+			<td><%= item.price %></td>
+			<td><%= item.genre.name %></td>
+			<td><%= item.is_sales_active %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

@@ -1,2 +1,31 @@
 <h2>商品詳細画面</h2>
+<div class="col-6">
+</div>
+<div clasS="col-6">
+	<table class="table">
+			<tr>
+				<th>商品名</th>
+				<td><%= @item.name %></td>
+			</tr>
+			<tr>
+				<th>商品説明</th>
+				<td><%= @item.introduction %></td>
+			</tr>
+			<tr>
+				<th>ジャンル</th>
+				<td><%= @item.genre.name %></td>
+			</tr>
+			<tr>
+				<th>商品価格</th>
+				<td><%= @item.price %> 円</td>
+			</tr>
+			<tr>
+				<th>販売ステータス</th>
+				<td><%= @item.is_sales_active %></td>
+			</tr>
+	</table>
+	<div>
+		<%= link_to "編集する", edit_admin_item_path(@item) %>
+	</div>
+</div>
 

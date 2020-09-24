@@ -11,7 +11,7 @@
 		</tr>
 		<tr>
 			<td><%= f.label :genre_id, "ジャンル" %></td>
-			<td></td>
+			<td><%= f.collection_select :genre_id, Genre.all, :id, :name %></td>
 		</tr>
 		<tr>
 			<td><%= f.label :price, "商品価格" %></td>
@@ -19,7 +19,12 @@
 		</tr>
 		<tr>
 			<td><%= f.label :is_sales_active, "販売ステータス" %></td>
-			<td></td>
+			<td>
+				<%= f.radio_button :is_sales_active, 0 %>
+				<%= f.label :is_sales_active, "販売中" %>
+				<%= f.radio_button :is_sales_active, 1 %>
+				<%= f.label :is_sales_active, "販売停止中" %>
+			</td>
 		</tr>
 </table>
 

@@ -1,1 +1,36 @@
-<h2>商品編集画面</h2>
+<h2><%= @item.name %>編集画面</h2>
+
+<%= form_for(@item, url: admin_item_path(@item)) do |f| %>
+<table class="table">
+		<tr>
+			<td><%= f.label :name, "商品名" %></td>
+			<td><%= f.text_field :name %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :introduction, "商品説明" %></td>
+			<td><%= f.text_area :introduction %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :genre_id, "ジャンル" %></td>
+			<td><%= f.collection_select :genre_id, Genre.all, :id, :name %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :price, "商品価格" %></td>
+			<td><%= f.number_field :price %>円</td>
+		</tr>
+		<tr>
+			<td><%= f.label :is_sales_active, "販売ステータス" %></td>
+			<td>
+				<%= f.radio_button :is_sales_active, 0 %>
+				<%= f.label :is_sales_active, "販売中" %>
+				<%= f.radio_button :is_sales_active, 1 %>
+				<%= f.label :is_sales_active, "販売停止中" %>
+			</td>
+		</tr>
+</table>
+
+<div class="actions">
+	<%= f.submit "更新する" %>
+</div>
+
+<% end %>
