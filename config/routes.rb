@@ -9,9 +9,7 @@ Rails.application.routes.draw do
     get 'orders/index'
     get 'orders/show'
     resources :genres, only: [:index, :create, :edit, :update, :destroy]
-    get 'customers/index'
-    get 'customers/show'
-    get 'customers/edit'
+    resources :customers, only: [:index, :show, :edit]
   end
 
   devise_for :customer, controllers: {
