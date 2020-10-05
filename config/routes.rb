@@ -20,8 +20,7 @@ Rails.application.routes.draw do
   scope module: :customer do
     root 'homes#top'
     get 'homes/about'
-    get 'deliveries/index'
-    get 'deliveries/edit'
+    resources :deliveries, only: [:index, :create, :edit, :update, :destory]
     get 'orders/index'
     get 'orders/new'
     get 'orders/show'
