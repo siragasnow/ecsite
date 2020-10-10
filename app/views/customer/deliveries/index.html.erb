@@ -1,6 +1,6 @@
 <h2>配送先登録／一覧</h2>
 
-<%= form_for(delivery, url: deliveries_path) do |f| %>
+<%= form_for @delivery, url:deliveries_path, method: :post do |f| %>
 	<table class="table">
 			<tr>
 				<th><%= f.label :postal_code, "郵便番号(ハイフンなし7桁)" %></th>
@@ -15,6 +15,7 @@
 				<td><%= f.text_field :name, autocomplete: "name", placeholder: "宛名" %></td>
 			</tr>
 	</table>
+	<%= f.submit "登録する", class: "btn btn-success"%>
 <% end %>
 
 <table class="table">
@@ -27,7 +28,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<%= @deliveries.each do |delivery| %>
+		<% @deliveries.each do |delivery| %>
 		<tr>
 			<td><%= delivery.postal_code %></td>
 			<td><%= delivery.destination %></td>
