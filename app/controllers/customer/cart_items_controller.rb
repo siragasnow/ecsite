@@ -19,12 +19,18 @@ class Customer::CartItemsController < ApplicationController
   end
 
   def update
+    @cart_item.update(cart_item_params) if @cart_item
+    redirect_to cart_items_path
   end
 
   def destroy
+    @cart_item.destroy if @cart_item
+    redirect_to cart_items_path
   end
 
   def destroy_all
+    current_customer.cart_items.destroy_all
+    redirect_to cart_items_path
   end
 
   def cart_item_params
